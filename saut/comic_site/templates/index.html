@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Комикс: Вспыш и всему своё время</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#6fb1ff,#cfe3ff);
+margin:0;
+text-align:center;
+}
+
+h1{
+padding:20px;
+color:#1c2c5b;
+}
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:80vh;
+}
+
+.panel{
+background:white;
+width:520px;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.panel img{
+width:100%;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.text{
+font-size:18px;
+line-height:1.5;
+color:#333;
+}
+
+.buttons{
+margin-top:20px;
+}
+
+button{
+padding:10px 20px;
+margin:5px;
+border:none;
+border-radius:8px;
+background:#3a7bff;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#2558c7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>⚡ Комикс: Вспыш и всему своё время</h1>
+
+<div class="container">
+
+<div class="panel">
+
+<img src="https://via.placeholder.com/500x250" id="image">
+
+<div class="text" id="text"></div>
+
+<div class="buttons">
+<button onclick="prev()">Назад</button>
+<button onclick="next()">Следующий</button>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let frames = [
+
+"Кадр 1. Вспыш летит над городом и смотрит на часы. Он понимает, что снова опаздывает на вызов. Внизу возле магазина стоит бабушка с корзиной покупок. Вспыш обещает помочь ей позже и быстро улетает на помощь Мише.",
+
+"Кадр 2. На детской площадке мальчик Миша грустно сидит на скамейке рядом со своей машинкой. У неё отвалилось колесо. Вспыш приземляется рядом и говорит, что сейчас быстро всё починит.",
+
+"Кадр 3. Вспыш слишком торопится. Он пытается быстро починить машинку, но случайно ломает ещё одну деталь. Машинка выглядит ещё хуже. Миша почти плачет.",
+
+"Кадр 4. Вспыш понимает свою ошибку. Он приглашает Мишу в мастерскую. Там они аккуратно разбирают машинку и начинают чинить её по порядку вместе с роботом Бипом.",
+
+"Кадр 5. Постепенно машинка снова становится целой. Вспыш показывает Мише, как правильно закручивать винтики и не спешить. Машинка снова отлично работает.",
+
+"Кадр 6. Позже Вспыш возвращается к бабушке возле магазина и помогает донести сумки. Он понимает важный урок: всему своё время. Лучше делать всё спокойно и аккуратно."
+
+];
+
+let current = 0;
+
+function showFrame(){
+document.getElementById("text").innerText = frames[current];
+}
+
+function next(){
+if(current < frames.length-1){
+current++;
+showFrame();
+}
+}
+
+function prev(){
+if(current > 0){
+current--;
+showFrame();
+}
+}
+
+showFrame();
+
+</script>
+
+</body>
+</html>
